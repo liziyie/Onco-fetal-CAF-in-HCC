@@ -1,4 +1,4 @@
-# Presence of onco-fetal neighborhoods in hepatocellular carcinoma is associated with relapse and response to immunotherapy!
+# Presence of onco-fetal neighborhoods in hepatocellular carcinoma is associated with relapse and response to immunotherapy
 
 This repository contains the scripts for producing the quantitative results in our paper.
 
