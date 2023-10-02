@@ -14,9 +14,9 @@ library(ComplexHeatmap)
 # Load data----
 HCC_seu <- readRDS("./Onco-fetal CAF Identification/HCC_Ankur_release.rds")
 hcc01_bin100 <- readRDS("./HCC01 and HCC03 Stereo-seq/hcc01_bin100.rds")
-hcc01_bin100 <- ScaleData(hcc01_bin100, features = row.names(hcc01_bin100))
+hcc01_bin100 <- SCTransform(hcc01_bin100, assay = "Spatial",  return.only.var.genes = FALSE, verbose = FALSE)
 hcc03_bin100 <- readRDS("./HCC01 and HCC03 Stereo-seq/hcc03_bin100.rds")
-hcc03_bin100 <- ScaleData(hcc03_bin100, features = row.names(hcc03_bin100))
+hcc03_bin100 <- SCTransform(hcc03_bin100, assay = "Spatial",  return.only.var.genes = FALSE, verbose = FALSE)
 
 # Fig.4a----
 hcc03_plot.list <- list()
