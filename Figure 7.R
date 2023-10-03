@@ -39,6 +39,18 @@ ABRS_metadata[sample_used,"ABRS_group"][ABRS_metadata[sample_used,"ABRS_score"] 
 ABRS_metadata$ABRS_group <- factor(ABRS_metadata$ABRS_group, levels = c("ABRS_low","ABRS_high"))
 ggplot(ABRS_metadata[sample_used,], aes(x = ABRS_group, y = Treg_score)) +
   geom_boxplot() +
+  ggtitle("GO30140_A") +
+  theme_cowplot(font_size = 7) +
+  labs(x = "") +
+  ggsignif::geom_signif(comparisons = list(c("ABRS_high","ABRS_low")))
+
+sample_used <- ABRS_metadata %>% filter(Group %in% c("IMbrave150_AB"), Response %in% c("R","NR")) %>% pull(anon_sampleId)
+ABRS_score_cutoff <- median(ABRS_metadata[sample_used,"ABRS_score"])
+ABRS_metadata[sample_used,"ABRS_group"] <- "ABRS_low"
+ABRS_metadata[sample_used,"ABRS_group"][ABRS_metadata[sample_used,"ABRS_score"] > ABRS_score_cutoff] <- "ABRS_high"
+ABRS_metadata$ABRS_group <- factor(ABRS_metadata$ABRS_group, levels = c("ABRS_low","ABRS_high"))
+ggplot(ABRS_metadata[sample_used,], aes(x = ABRS_group, y = Treg_score)) +
+  geom_boxplot() +
   ggtitle("IMbrave150_AB") +
   theme_cowplot(font_size = 7) +
   labs(x = "") +
