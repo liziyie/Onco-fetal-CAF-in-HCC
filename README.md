@@ -4,7 +4,7 @@ This repository contains the scripts for producing the quantitative results in o
 
 ## Contact
 Please contact us:  
-Ziyi Li: liziyie@shsmu.edu.cn
+Ziyi Li: liziyiepku@gmail.com
 
 ## Copyright
 ©2023 Ziyi Li. All rights reserved.
